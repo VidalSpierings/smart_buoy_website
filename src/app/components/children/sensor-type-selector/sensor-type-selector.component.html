@@ -1,0 +1,9 @@
+<div class="form-group">
+    <label class="sensor-label">{{ sensorId }}</label>
+    <p-dropdown 
+      [options]="sensorTypes" 
+      [(ngModel)]="selectedType" 
+      optionLabel="availableType"
+      class="dropdown-space">
+    </p-dropdown>
+  </div>

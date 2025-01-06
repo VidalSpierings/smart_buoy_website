@@ -1,0 +1,9 @@
+p-chart {
+    display: block;
+    border-radius: 19px;
+    overflow: hidden;
+    background-color: white;
+    height: 400px;
+    margin: 15px;
+    position: relative;
+  }

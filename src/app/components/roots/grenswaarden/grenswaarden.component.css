@@ -1,0 +1,88 @@
+.search-container {
+    position: relative;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  
+  .search-button-container {
+    margin-left: 10px;
+    height: 42px;
+    width: 42px;
+    background-color: white;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    vertical-align: middle;
+  }
+  
+  input {
+    height: 42px;
+    margin: 10px;
+    vertical-align: middle;
+  }
+  
+  i {  
+    margin-left: 10px;
+    height: 42px;
+    width: 42px;
+    background-color: white;
+    border-radius: 8px;
+    font-size: 2.5rem;
+    vertical-align: middle;
+  }
+
+  .id-label {
+    padding-top: 15px;
+    font-size: 50px;
+    font-weight: bold;
+    position: absolute;
+    top: 7.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.label-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+}
+
+.date-of-placement-label {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-radius: 8px;
+    top: 15%;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    left: 25%;
+}
+
+.location-name-label {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-radius: 8px;
+    top: 15%;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    right: 25%;
+}
+
+.scrollable-container {
+  margin-top: 20vh;
+  height: 80vh;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}

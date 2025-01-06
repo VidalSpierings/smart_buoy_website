@@ -1,0 +1,15 @@
+<label class="id-label">{{ personName }}</label>
+<div className="search-container">
+    <i class="pi pi-search"></i>
+  <input type="text" pInputText [(ngModel)]="searchBarText" />
+</div>
+<div class="scrollable-container">
+  <ul class="list-container">
+    <li 
+      class="list-item" 
+      *ngFor="let data of componentsData">
+      <app-split-list [timestamp]="data.timestamp" [measurementsInFull]="data.screen"></app-split-list>
+      <!--measurementsInFull = the text in the element in the right side, not the element on the left side-->
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,16 @@
+div {
+  display: block;
+  border-radius: 19px;
+  overflow: hidden; 
+  margin: 15px;
+}
+
+.custom-marker-red {
+  color: red;
+  font-size: 32px; 
+}
+
+.custom-marker-green {
+  color: green;
+  font-size: 32px; 
+}

@@ -1,0 +1,14 @@
+<label class="id-label">{{ "ID: " + buoyId }}</label>
+<div className="search-container">
+    <i class="pi pi-search"></i>
+  <input type="text" pInputText [(ngModel)]="searchBarText" />
+</div>
+<div class="scrollable-container">
+  <ul class="list-container">
+    <li 
+      class="list-item" 
+      *ngFor="let data of componentsData">
+      <app-split-list [timestamp]="data.timestampnew" [measurementsInFull]="data.measurementsInFullnew"></app-split-list>
+    </li>
+  </ul>
+</div>

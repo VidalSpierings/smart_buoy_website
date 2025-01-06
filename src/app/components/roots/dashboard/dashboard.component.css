@@ -1,0 +1,37 @@
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+  }
+  
+  .scroll-content {
+    display: flex;
+    gap: 20px;
+  }
+  
+  app-measurement-type-circle {
+    flex: 0 0 auto;
+    width: 200px;
+  }
+
+  .hist-stats-and-graph-container {
+    display: flex;
+    gap: 16px;
+  }
+
+  app-buoys-map, app-buoy-statistics {
+    flex: 1;
+  }
+
+  .section-spacer {
+    margin: 175px 0;
+  }
+
+.hist-stats-and-graph-container,
+.scroll-container,
+app-dashboard-serial-number {
+    position: relative;
+}

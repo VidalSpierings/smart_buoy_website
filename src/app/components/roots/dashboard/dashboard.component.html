@@ -1,0 +1,19 @@
+<div class="hist-stats-and-graph-container">
+  <app-buoys-map></app-buoys-map>
+  <app-buoy-statistics></app-buoy-statistics>
+</div>
+
+<div class="section-spacer"></div>
+
+<div class="scroll-container">
+    <div class="scroll-content">
+      <app-measurement-type-circle 
+      *ngFor="let data of componentsData"
+      [measurementTypeEmojiText]="data?.measurementTypeEmojiText ?? '❌' "
+      [measurementText]="data?.measurementText ?? '∅' ">
+      </app-measurement-type-circle>
+      <app-add-circle/>
+    </div>
+</div>
+
+<app-dashboard-serial-number></app-dashboard-serial-number>

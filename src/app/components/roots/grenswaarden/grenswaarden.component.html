@@ -1,0 +1,16 @@
+<label class="id-label">{{ "ID: " + buoyId }}</label>
+<div className="search-container">
+    <i class="pi pi-search"></i>
+  <input type="text" pInputText [(ngModel)]="searchBarText" />
+</div>
+<div className="label-container">
+    <label class="date-of-placement-label">{{ dateOfPlacementText }}</label>
+    <label class="location-name-label">{{ locationNameText }}</label>
+</div>
+<div class="scrollable-container">
+  <div class="grid-container">
+    <app-sensor-border-values 
+    *ngFor="let borderValues of borderValuesComponentsData" [data]="borderValues">
+    </app-sensor-border-values>
+  </div>
+</div>

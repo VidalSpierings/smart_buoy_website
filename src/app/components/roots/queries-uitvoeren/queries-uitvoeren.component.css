@@ -1,0 +1,61 @@
+.search-container {
+    position: relative;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  
+  .search-button-container {
+    margin-left: 10px;
+    height: 42px;
+    width: 42px;
+    background-color: white;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    vertical-align: middle;
+  }
+  
+  input {
+    height: 42px;
+    margin: 10px;
+    vertical-align: middle;
+  }
+  
+  i {  
+    margin-left: 10px;
+    height: 42px;
+    width: 42px;
+    background-color: white;
+    border-radius: 8px;
+    font-size: 2.5rem;
+    vertical-align: middle;
+  }
+
+  .id-label {
+    padding-top: 15px;
+    font-size: 50px;
+    font-weight: bold;
+    position: absolute;
+    top: 7.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .list-container {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .list-item {
+    margin-bottom: 1rem;
+  }
+  
+  .scrollable-container {
+    margin-top: 20vh;
+    height: 80vh;
+    overflow-y: auto;
+    padding: 10px;
+  }

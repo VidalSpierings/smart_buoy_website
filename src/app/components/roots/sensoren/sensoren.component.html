@@ -1,0 +1,12 @@
+<div className="search-container">
+    <i class="pi pi-search"></i>
+  <input type="text" pInputText [(ngModel)]="searchBarText" />
+</div>
+
+<div class="sensor-types-container">
+    <app-sensor-type-selector 
+      [sensorTypes]="availableTypes"
+      [sensorId]="id"
+      [selectedType]="sensorenDisplayModel">
+    </app-sensor-type-selector>
+</div>
