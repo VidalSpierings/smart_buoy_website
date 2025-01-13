@@ -51,5 +51,3 @@ export class SensorenComponent {
   }
 
 }
-
-// TODO: Met behulp van map functie, da arrays omzetten naar JS objecten, en zoekbalk toevoegen

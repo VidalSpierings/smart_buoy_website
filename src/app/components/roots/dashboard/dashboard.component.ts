@@ -6,6 +6,7 @@ import { BuoyStatisticsComponent } from "../../children/buoy-statistics/buoy-sta
 import { BuoysMapComponent } from "../../children/geo-location/buoys-map/buoys-map.component";
 import { AddCircleComponent } from "../../children/add-circle/add-circle.component";
 import { DashboardSerialNumberComponent } from "../../children/dashboard-serial-number/dashboard-serial-number.component";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,7 +21,7 @@ export class DashboardComponent {
 
   componentsData: { measurementTypeEmojiText: string; measurementText: string }[] = [];
 
-  constructor() {
+  constructor(private router: Router) {
 
     this.dashboardService.getBuoyData().then((dashboardModel) => {
 
@@ -47,5 +48,32 @@ export class DashboardComponent {
     });
 
   }
+
+  onSchermbezoekenButtonClicked(): void {
+    console.log('Schermbezoeken button pressed');
+      this.router.navigate(['/schermbezoeken']);
+  }
+
+  onSensorenButtonClicked(): void {
+    console.log('Sensoren button pressed');
+      this.router.navigate(['/sensoren']);
+  }
+
+  onGrenswaardenButtonClicked(): void {
+    console.log('Grenswaarden button pressed');
+      this.router.navigate(['/grenswaarden']);
+  }
+
+  onMetingenButtonClicked(): void {
+    console.log('Metingen button pressed');
+      this.router.navigate(['/metingen']);
+  }
+
+  onQueriesUitvoerenButtonClicked(): void {
+    console.log('Queries Uitvoeren button pressed');
+      this.router.navigate(['/queries-uitvoeren']);
+  }
+
+  // OnClicklisteners for navigating to the various screens
 
 }

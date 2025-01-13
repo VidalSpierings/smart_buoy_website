@@ -1,37 +1,67 @@
+.circle-buttons-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.circle-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: green;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.circle-button:hover {
+  background-color: #388e3c;
+}
+
+.hist-stats-and-graph-container {
+  display: flex;
+  gap: 16px;
+}
+
 .scroll-container {
-    display: flex;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding: 10px;
-    position: absolute;
-    bottom: 0;
-  }
-  
-  .scroll-content {
-    display: flex;
-    gap: 20px;
-  }
-  
-  app-measurement-type-circle {
-    flex: 0 0 auto;
-    width: 200px;
-  }
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+}
 
-  .hist-stats-and-graph-container {
-    display: flex;
-    gap: 16px;
-  }
+.scroll-content {
+  display: flex;
+  gap: 20px;
+}
 
-  app-buoys-map, app-buoy-statistics {
-    flex: 1;
-  }
+app-measurement-type-circle {
+  flex: 0 0 auto;
+  width: 200px;
+}
 
-  .section-spacer {
-    margin: 175px 0;
-  }
+app-buoys-map, app-buoy-statistics {
+  flex: 1;
+}
+
+.section-spacer {
+  margin: 100px 0;
+}
 
 .hist-stats-and-graph-container,
 .scroll-container,
 app-dashboard-serial-number {
-    position: relative;
+  position: relative;
 }

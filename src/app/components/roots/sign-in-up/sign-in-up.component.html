@@ -1,0 +1,25 @@
+<div class="centered-box">
+    <h2>Account</h2>
+    
+    <label for="email">e-mail</label>
+    <input type="text" pInputText [(ngModel)]="enterEmailText" />
+  
+    <label for="password" class="password">password</label>
+    <input type="text" pInputText [(ngModel)]="enterPasswordText" />
+  
+    <div class="button-group">
+        <button 
+        pButton
+         type="button" 
+         label="Register" 
+         class="p-button-primary"
+         (click)="onRegisterClicked()">
+        </button>
+        <button 
+        pButton 
+        type="button" 
+        label="Log In" 
+        class="p-button-primary"
+        (click)="onLoginClicked()"></button>
+    </div>
+  </div>
