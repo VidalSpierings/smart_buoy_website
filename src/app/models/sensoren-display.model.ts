@@ -8,7 +8,7 @@ export interface SensorenDisplayModelInterface {
   export class SensorenDisplayModel {
   
       public deveui: string
-      public type: string;
+      public type: {};
       public id: number;
       public availableTypes: object[];
   

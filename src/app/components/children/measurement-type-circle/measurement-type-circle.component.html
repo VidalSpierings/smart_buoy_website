@@ -1,9 +1,9 @@
 <div class="root-circle-flexbox">
   <div class="icon-container top-left">
-    <i class="pi pi-pencil"></i>
+    <i class="pi pi-pencil" (click)="onEditInitiated()"></i>
   </div>
   <div class="icon-container top-right">
-    <i class="pi pi-trash"></i>
+    <i class="pi pi-trash" (click)="onDeleteInitiated()"></i>
   </div>
     <div class="text-container">
       <div class="measurement-type-emoji-text">{{ measurementTypeEmojiText }}</div>

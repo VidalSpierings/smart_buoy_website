@@ -5,6 +5,9 @@ import { SensorenModel } from '../../../models/sensoren.model';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { SensorenDisplayModel } from '../../../models/sensoren-display.model';
+import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-sensoren',
@@ -12,10 +15,12 @@ import { SensorenDisplayModel } from '../../../models/sensoren-display.model';
   imports: [
     SensorTypeSelectorComponent,
     FormsModule,
-    InputTextModule
+    InputTextModule,
+    ButtonModule,
+    DialogModule
     ],
   templateUrl: './sensoren.component.html',
-  styleUrl: './sensoren.component.css'
+  styleUrl: './sensoren.component.css',
 })
 
 export class SensorenComponent {
@@ -30,7 +35,11 @@ export class SensorenComponent {
 
   searchBarText: string = "";
 
+  cookieService = inject(CookieService);
+
   constructor(){
+
+    console.log(`--- persisted sensor data ---- :${this.cookieService.get('data')}`);
 
     this.sensorenService.getSensorTypes().then((sensorenModel) => {
 
@@ -38,10 +47,12 @@ export class SensorenComponent {
       this.id = `ID: ${sensorenModel.id}`;
       this.sensorenDisplayModel = {
         deveui: sensorenModel.deveui,
-        type: sensorenModel.type,
+        type: {availableType: sensorenModel.type},
         id: sensorenModel.id,
         availableTypes: sensorenModel.availableTypes.map(value => ({ availableType: value }))
     };
+
+    this.cookieService.set('data', JSON.stringify(this.sensorenDisplayModel));
 
     }).catch((error) => {
 

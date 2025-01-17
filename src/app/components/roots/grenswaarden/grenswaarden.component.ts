@@ -4,11 +4,21 @@ import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { CommonModule, NgFor } from '@angular/common';
 import { SensorBorderValuesComponent } from "../../children/sensor-border-values/sensor-border-values.component";
+import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
 
 @Component({
   selector: 'app-grenswaarden',
   standalone: true,
-  imports: [FormsModule, InputTextModule, NgFor, CommonModule, SensorBorderValuesComponent],
+  imports: [
+    FormsModule,
+    InputTextModule,
+    NgFor,
+    CommonModule,
+    SensorBorderValuesComponent,
+    ButtonModule,
+    DialogModule
+  ],
   templateUrl: './grenswaarden.component.html',
   styleUrl: './grenswaarden.component.css'
 })
@@ -25,6 +35,10 @@ export class GrenswaardenComponent {
   locationNameText: string = "";
 
   borderValuesComponentsData: { name: string, slechtonder: number, slechtboven: number }[] = [];
+
+  userInput: string = "";
+  
+  displayPrompt: boolean = false;
 
   constructor(){
 
@@ -48,6 +62,22 @@ export class GrenswaardenComponent {
 
     });
 
+  }
+
+  showPrompt(): void {
+    this.displayPrompt = true;
+  }
+
+  handleOk(): void {
+    console.log('User Input:', this.userInput);
+    this.displayPrompt = false;
+    this.userInput = '';
+  }
+
+  handleCancel(): void {
+    console.log('Prompt canceled.');
+    this.displayPrompt = false;
+    this.userInput = '';
   }
 
 }

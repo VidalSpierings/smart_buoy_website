@@ -13,7 +13,7 @@ export class SensorenService {
 
     const dummyModelObject: SensorenModelInterface = {
             deveui: "70-B3-D5-7E-D0-06-AF-F0",
-            type: "egv",
+            type: "EGV",
             id: 1,
             availableTypes: [
               "pH",
@@ -27,4 +27,5 @@ export class SensorenService {
         return dummyModelObject
 
   }
+
 }

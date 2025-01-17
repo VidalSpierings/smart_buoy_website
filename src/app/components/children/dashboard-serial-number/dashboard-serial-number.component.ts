@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard-serial-number',
@@ -8,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './dashboard-serial-number.component.css'
 })
 export class DashboardSerialNumberComponent {
+
+   @Output() editInitiated = new EventEmitter<void>();
+
+  onEditInitiated(): void {
+    this.editInitiated.emit();
+  }
 
 }

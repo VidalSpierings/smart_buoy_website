@@ -7,17 +7,36 @@ import { BuoysMapComponent } from "../../children/geo-location/buoys-map/buoys-m
 import { AddCircleComponent } from "../../children/add-circle/add-circle.component";
 import { DashboardSerialNumberComponent } from "../../children/dashboard-serial-number/dashboard-serial-number.component";
 import { Router } from '@angular/router';
+import { DialogModule } from 'primeng/dialog';
+import { FormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [MeasurementTypeCircleComponent, NgForOf, BuoyStatisticsComponent, BuoysMapComponent, AddCircleComponent, DashboardSerialNumberComponent],
+  imports: [
+    MeasurementTypeCircleComponent,
+    NgForOf,
+    BuoyStatisticsComponent,
+    BuoysMapComponent,
+    AddCircleComponent,
+    DashboardSerialNumberComponent,
+    DialogModule,
+    FormsModule,
+    ButtonModule
+  ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
 
   dashboardService: DashboardService = inject(DashboardService);
+
+  displayPrompt: boolean = false;
+
+  displayPromptDelete: boolean = false;
+
+  userInput: string = "";
 
   componentsData: { measurementTypeEmojiText: string; measurementText: string }[] = [];
 
@@ -75,5 +94,37 @@ export class DashboardComponent {
   }
 
   // OnClicklisteners for navigating to the various screens
+
+  showPrompt(): void {
+    this.displayPrompt = true;
+  }
+
+  handleOk(): void {
+    console.log('User Input:', this.userInput);
+    this.displayPrompt = false;
+    this.userInput = '';
+  }
+
+  handleCancel(): void {
+    console.log('Prompt canceled.');
+    this.displayPrompt = false;
+    this.userInput = '';
+  }
+
+  showPromptDelete(): void {
+    this.displayPromptDelete = true;
+  }
+
+  handleOkDelete(): void {
+    console.log('User Input:', this.userInput);
+    this.displayPromptDelete = false;
+    this.userInput = '';
+  }
+
+  handleCancelDelete(): void {
+    console.log('Prompt canceled.');
+    this.displayPromptDelete = false;
+    this.userInput = '';
+  }
 
 }

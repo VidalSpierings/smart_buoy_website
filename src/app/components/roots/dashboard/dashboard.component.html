@@ -1,3 +1,42 @@
+<p-dialog 
+    header="New / Edit value" 
+    [(visible)]="displayPrompt" 
+    [modal]="true" 
+    [closable]="false" 
+    [responsive]="true" 
+    [style]="{ width: '300px' }">
+    
+  <div class="p-fluid">
+    <div class="field">
+      <label for="userInput">Your Input</label>
+      <input type="text" pInputText [(ngModel)]="userInput" />
+    </div>
+  </div>
+
+  <p-footer>
+    <p-button label="Ok" (click)="handleOk()"></p-button>
+    <p-button label="Cancel" (click)="handleCancel()"></p-button>
+  </p-footer>
+</p-dialog>
+
+<!--- Dialog that appears when user chooses to edit a given measurement (type) -->
+
+<p-dialog 
+    header="Delete?" 
+    [(visible)]="displayPromptDelete" 
+    [modal]="true" 
+    [closable]="false" 
+    [responsive]="true" 
+    [style]="{ width: '300px' }">
+
+  <p-footer>
+    <p-button label="Yes" (click)="handleOkDelete()"></p-button>
+    <p-button label="No" (click)="handleCancelDelete()"></p-button>
+  </p-footer>
+</p-dialog>
+
+<!--- Dialog that appears when user chooses to delete a given measurement (type) -->
+
 <div class="circle-buttons-container">
   <button class="circle-button" id="schermbezoeken" (click)="onSchermbezoekenButtonClicked()">🖥️</button>
   <button class="circle-button" id="sensoren" (click)="onSensorenButtonClicked()">📟</button>
@@ -18,10 +57,14 @@
       <app-measurement-type-circle 
       *ngFor="let data of componentsData"
       [measurementTypeEmojiText]="data?.measurementTypeEmojiText ?? '❌' "
-      [measurementText]="data?.measurementText ?? '∅' ">
+      [measurementText]="data?.measurementText ?? '∅' "
+      (editInitiated)="showPrompt()"
+      (deleteInitiated)="showPromptDelete()">
       </app-measurement-type-circle>
       <app-add-circle/>
     </div>
 </div>
 
-<app-dashboard-serial-number></app-dashboard-serial-number>
+<app-dashboard-serial-number (editInitiated)="showPrompt()"></app-dashboard-serial-number>
+
+<!--- The base webpage -->
